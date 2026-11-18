@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>تحدي السيلفي 😂</title>
+<style>
+body {
+  background: #151521;
+  color: white;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 50px 15px;
+}
+.card {
+  background: #29293b;
+  padding: 25px;
+  border-radius: 20px;
+}
+button {
+  background: #9146ff;
+  color: white;
+  padding: 15px 25px;
+  border: 0;
+  border-radius: 12px;
+  font-size: 18px;
+}
+img {
+  max-width: 100%;
+  margin-top: 20px;
+  border-radius: 15px;
+}
+</style>
+</head>
+<body>
+<div class="card">
+  <h1>😂 تحدي السيلفي</h1>
+  <p>اختار سيلفي من جهازك وشوف النتيجة!</p>
+  <p>الصورة بتنعرض عندك فقط، وما راح تنرسل لأحد.</p>
+  <input type="file" id="photo" accept="image/*">
+  <br><br>
+  <button onclick="showPrank()">اكشف النتيجة 🤣</button>
+  <div id="result"></div>
+</div>
+<script>
+function showPrank() {
+  const file = document.getElementById("photo").files[0];
+  if (!file) {
+    alert("اختار صورة أول 😂");
+    return;
+  }
+  const url = URL.createObjectURL(file);
+  document.getElementById("result").innerHTML =
+    "<h2>تم اكتشاف نسبة اللقافة: 99% 😂</h2>" +
+    "<img id='preview' alt='صورتك'>";
+  document.getElementById("preview").src = url;
+}
+</script>
+</body>
+</html>
